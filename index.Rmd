@@ -78,7 +78,7 @@ class: about-me-slide, inverse, middle, center
 
 # About me
 
-<img style="border-radius: 50%;" src="figures/avatar.jpg" width="150px"/>
+<img style="border-radius: 50%;" src="figures/avatar.jpeg" width="150px"/>
 
 ## Guangyu Zhu
 
@@ -103,7 +103,7 @@ class: top
 
 .pull-left-narrow[
 ```{r,out.width='100%'}
-knitr::include_graphics('figures/jiang.jpg')
+knitr::include_graphics('figures/jiang.jpeg')
 ```
 ]
 
@@ -115,7 +115,7 @@ knitr::include_graphics('figures/jiang.jpg')
 
 .pull-left-narrow[
 ```{r,out.width='100%'}
-knitr::include_graphics('figures/qin.jpg')
+knitr::include_graphics('figures/qin.jpeg')
 ```
 ]
 
@@ -153,7 +153,7 @@ Chang Chun
 
 .pull-right[
 ```{r,out.width='100%'}
-knitr::include_graphics('figures/tingting.jpg')
+knitr::include_graphics('figures/tingting.jpeg')
 ```
 ]
 ] <!---->
@@ -167,7 +167,7 @@ Born
 
 .pull-right[
 ```{r,out.width='100%'}
-knitr::include_graphics('figures/lucy.jpg')
+knitr::include_graphics('figures/lucy.jpeg')
 ```
 ]
 ] <!---->
