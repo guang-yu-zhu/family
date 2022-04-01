@@ -1,0 +1,48 @@
+.chinese-r2l {
+    writing-mode: vertical-rl;
+}
+
+/*-- CODE CHUNKS --*/
+
+
+/*--  --*/
+pre code {
+  background:         none;
+  font-size:          18px !important;
+}
+
+
+pre.r,
+pre.js,
+pre.yaml,
+pre.json,
+pre.bash,
+pre.html,
+pre.css {
+  background: none;
+}
+
+pre.r::after,
+pre.js::after,
+pre.yaml::after,
+pre.json::after,
+pre.bash::after,
+pre.html::after,
+pre.css::after {
+  text-transform: uppercase;
+  font-size: 18px;
+  left: -1.25em;
+  bottom: -1em;
+  transform-origin: top left;
+  transform: rotate(-90deg);
+}
+
+pre.pre-hide-filetype,
+.pre-hide-filetype pre::after {
+  content: '';
+}
+
+pre.pre-hide-border,
+.pre-hide-border pre {
+  border-color: transparent;
+}

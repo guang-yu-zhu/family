@@ -7,11 +7,14 @@ institute: "University of Rhode Island | Dept. of Computer Science and Statistic
 date: "Mar. 20, 2018"
 output:
   xaringan::moon_reader:
-    css: 
+    css:
       - default
       - css/mytheme.css
       - css/mytheme-fonts.css
-      - css/newclass.css
+      #- css/codechunk_name.css
+      - css/codechunk_mytheme.css
+    includes:
+      after_body: css/html/js4shiny-includes.html
     lib_dir: libs
     seal: false
     self_contained: false
@@ -48,7 +51,15 @@ knitr::knit_engines$set("markdown")
 xaringanExtra::use_tile_view()
 xaringanExtra::use_panelset()
 xaringanExtra::use_clipboard()
+xaringanExtra::use_freezeframe()
+xaringanExtra::use_search(show_icon = FALSE)
 ```
+
+```{r js4shiny, echo=FALSE}
+# need this to add code type to code chunk
+js4shiny::html_setup(stylize = c("fonts", "variables", "code"))
+```
+
 
 class: title-slide, right, top
 background-image: url(figures/icon-512.png), url(figures/frame-art.png)
@@ -70,6 +81,29 @@ background-size: 8%, cover
 Welcome to the workshop on sharing your work with xaringan.
 
 Where I'll show you how to create impressive presentation slides that can be deployed to the web for easy sharing.
+
+
+---
+
+## Code
+
+```r
+fontawesome::fa("wikipedia-w", a11y="sem")
+```
+
+```css
+a {
+  text-decoration: underline;
+}
+```
+
+```html
+<img 
+src="common-black-lemur.jpg" 
+alt="Common black lemur with a millipede in one hand and flies hovering overhead"
+/>
+```
+
 
 ---
 name: about-me
@@ -380,5 +414,6 @@ Here are some options to consider
 - add some [icons](#icons)!
 - see [my about me slide](#about-me) for ideas
 ]
+
 
 
