@@ -34,7 +34,7 @@ output:
 library(knitr)
 library(tidyverse)
 library(xaringanExtra)
-library(icons)
+library(anicon)
 # set default options
 opts_chunk$set(echo=FALSE,
                collapse = TRUE,
@@ -173,6 +173,212 @@ knitr::include_graphics('figures/lucy.jpeg')
 ] <!---->
 ] <!--end of panelset-->
 
+---
+name: live-coding
+background-color: var(--my-yellow)
+class: middle, center
 
+`r anicon::faa("code", color = "#122140",size=3,speed='slow')`<br>
+# Let's try it live together
+
+
+
+---
+
+name: question
+class: inverse, middle, center
+
+{{content}}
+
+---
+template: question
+
+`r anicon::faa("magic", size = 3,speed='slow',anitype='hover')`
+# How can we make our slides<br>look more interesting???
+
+--
+
+----
+
+.left-col[.center[
+`r anicon::faa("th-large", size = 2,speed='slow',anitype='hover')`
+### with placement
+]]
+
+--
+
+.center-col[
+.center[
+`r anicon::faa("image", size = 2,speed='slow',anitype='hover')`
+### pretty pictures
+]]
+
+--
+
+.right-col[
+.center[
+`r anicon::faa("star", size = 2,speed='slow',anitype='hover')`
+### and icons
+]]
+
+---
+name: pictures
+## Pictures <i class="fas fa-image" style = "float: right"></i>
+
+---
+template: pictures
+
+There are a variety of ways to add images to your slides!
+
+.panelset[
+.panel[.panel-name[Markdown]
+.pull-left[
+
+```{markdown, eval=FALSE, echo=TRUE}
+![](figures/camera-green.jpg)
+```
+
+- simple
+- not very flexible
+- output size fully dependent on the size of the image, but scaling can be managed [using custom macros (JavaScript functions) ](https://slides.yihui.org/xaringan/#33)
+ 
+.small[
+Photo by [Annie Spratt](https://unsplash.com/@anniespratt)]
+]
+
+.pull-right[
+![](figures/camera-green.jpg)
+]
+] <!---->
+
+.panel[.panel-name[knitr]
+
+.pull-left[
+
+```{r picture-knitr, eval=TRUE, echo=TRUE, fig.show="hide"}
+knitr::include_graphics("figures/camera-green.jpg")
+```
+- pretty flexible
+- a little bulky
+- more options [here](https://www.rdocumentation.org/packages/knitr/versions/1.30/topics/include_graphics)
+]
+
+.pull-right[
+```{r, ref.label="picture-knitr", out.width="90%"}
+```
+]
+
+] <!---->
+
+.panel[.panel-name[HTML]
+.pull-left[
+```{html, eval=FALSE, echo=TRUE}
+<img src="figures/camera-green.jpg" width="90%"/>
+```
+- most flexible
+- a bit unsightly
+- takes time to [get used to syntax](https://www.w3schools.com/html/html_images.asp)
+
+.small[**Tip:** To insert an avatar: 
+```{html, eval=FALSE, echo=TRUE}
+<img src="https://insertweblink.here" width="170px" style="border-radius: 50%;"/>
+```
+]
+]
+
+.pull-right[
+<img src="figures/camera-green.jpg" width="90%"/>
+]
+
+] <!---->
+
+---
+.panel[.panel-name[Image sources]
+
+Below you'll see a few places where you can find beautiful and free background images contributed by artists all over world.
+
+**Tip:** You can use the `.footnote[]` class to credit the source of the image ([example here](https://spcanelon.github.io/xaringan-basics-and-beyond/slides/day-01-basics.html)) `r emo::ji("slightly_smiling_face")`
+
+.pull-left[
+- [unsplash.com](unsplash.com)
+- [rawpixel.com](rawpixel.com)
+- [pexels.com](https://www.pexels.com/)
+]
+
+.pull-right[
+> - In the public domain<br>
+  (no attribution necessary)
+> - Free with attribution<br>
+  (e.g. Photo by [Annie Spratt](https://unsplash.com/@anniespratt))
+]
+] <!---->
+
+.panel[.panel-name[Image paths]
+
+.pull-left[
+R Markdown and xaringan don't always agree on where images are located<br>(i.e. relative file paths). 
+
+You might find that `knitr::include_graphics()` produces an image from a code chunk in your Rmd, and that the same image may not show up when you render your xaringan slides. `r emo::ji("woman_shrugging")`
+]
+
+.pull-right[
+I recommend using this directory structure to help avoid confusion<br>(example file path: `figures/camera-green.jpg`)
+
+```{r eval=FALSE, echo=TRUE}
+.
+├── css
+├── img #<<
+    ├── camera-green.jpg #<<
+├── libs
+├── my-slides.Rmd
+└── my-slides.html
+```
+]
+
+]
+.panel[.panel-name[Background]
+
+You can use the [background-image property](https://github.com/gnab/remark/wiki/Markdown#background-image) underneath the `---` slide separator
+
+- `background-image:` 
+  - `url(https://insertweblink.here)` --> image from the web
+  - `url(figures/camera-green.jpg)` --> local image, using relative file paths
+- `background-size:`
+    - `cover` --> rescales + crops with no empty space
+    - `contain` --> rescales only
+- `background-position:` play with [this](https://css-tricks.com/almanac/properties/b/background-position/)
+
+
+.right[.my-coral[`background-size` examples in action! `r fontawesome::fa("arrow-circle-right")` ]]
+] <!---->
+
+] <!--end of panelset-->
+
+
+---
+name: your-turn
+background-color: var(--my-red)
+class: inverse
+
+.left-column[
+## Your turn  <br>`r fontawesome::fa("edit")`<br>
+### .my-pink[10:00 mins]
+]
+
+.right-column[
+### Make an "about me" slide
+
+----
+
+Think about including details like your<br>name, affiliation, location, and/or contact information
+
+Here are some options to consider
+- practice [moving content around](#placement) the slide
+- separate content with a horizontal bar `----`
+- [add an image](#pictures) or photo
+- link to sites and/or social media
+- add some [icons](#icons)!
+- see [my about me slide](#about-me) for ideas
+]
 
 
